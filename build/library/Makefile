@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles /home/abdelrhman/Desktop/project_dir/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/abdelrhman/Desktop/project_dir/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles /home/abdelrhman/Desktop/project_dir/build/library//CMakeFiles/progress.marks
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,44 +148,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/abdelrhman/Desktop/project_dir/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named main
+# Convenience name for target.
+library/CMakeFiles/static.dir/rule:
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/CMakeFiles/static.dir/rule
+.PHONY : library/CMakeFiles/static.dir/rule
 
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named static
-
-# Build rule for target.
-static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 static
+# Convenience name for target.
+static: library/CMakeFiles/static.dir/rule
 .PHONY : static
 
 # fast build rule for target.
 static/fast:
-	$(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/build
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/build
 .PHONY : static/fast
+
+WriteInFile.o: WriteInFile.cpp.o
+.PHONY : WriteInFile.o
+
+# target to build an object file
+WriteInFile.cpp.o:
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/WriteInFile.cpp.o
+.PHONY : WriteInFile.cpp.o
+
+WriteInFile.i: WriteInFile.cpp.i
+.PHONY : WriteInFile.i
+
+# target to preprocess a source file
+WriteInFile.cpp.i:
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/WriteInFile.cpp.i
+.PHONY : WriteInFile.cpp.i
+
+WriteInFile.s: WriteInFile.cpp.s
+.PHONY : WriteInFile.s
+
+# target to generate assembly for a file
+WriteInFile.cpp.s:
+	cd /home/abdelrhman/Desktop/project_dir/build && $(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/WriteInFile.cpp.s
+.PHONY : WriteInFile.cpp.s
 
 # Help Target
 help:
@@ -199,8 +211,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... static"
+	@echo "... WriteInFile.o"
+	@echo "... WriteInFile.i"
+	@echo "... WriteInFile.s"
 .PHONY : help
 
 
@@ -212,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/abdelrhman/Desktop/project_dir/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

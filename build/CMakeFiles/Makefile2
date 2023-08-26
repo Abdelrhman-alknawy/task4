@@ -63,70 +63,101 @@ CMAKE_BINARY_DIR = /home/abdelrhman/Desktop/project_dir/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/program.dir/all
-all: CMakeFiles/WriteInFile.dir/all
+all: src/all
+all: library/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: src/preinstall
+preinstall: library/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/program.dir/clean
-clean: CMakeFiles/WriteInFile.dir/clean
+clean: src/clean
+clean: library/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/program.dir
+# Directory level rules for directory library
 
-# All Build rule for target.
-CMakeFiles/program.dir/all: CMakeFiles/WriteInFile.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/abdelrhman/Desktop/project_dir/build/CMakeFiles --progress-num=3,4,5 "Built target program"
-.PHONY : CMakeFiles/program.dir/all
+# Recursive "all" directory target.
+library/all: library/CMakeFiles/static.dir/all
+.PHONY : library/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/program.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/program.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 0
-.PHONY : CMakeFiles/program.dir/rule
+# Recursive "preinstall" directory target.
+library/preinstall:
+.PHONY : library/preinstall
 
-# Convenience name for target.
-program: CMakeFiles/program.dir/rule
-.PHONY : program
-
-# clean rule for target.
-CMakeFiles/program.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/clean
-.PHONY : CMakeFiles/program.dir/clean
+# Recursive "clean" directory target.
+library/clean: library/CMakeFiles/static.dir/clean
+.PHONY : library/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/WriteInFile.dir
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/main.dir/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/main.dir/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/WriteInFile.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WriteInFile.dir/build.make CMakeFiles/WriteInFile.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WriteInFile.dir/build.make CMakeFiles/WriteInFile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/abdelrhman/Desktop/project_dir/build/CMakeFiles --progress-num=1,2 "Built target WriteInFile"
-.PHONY : CMakeFiles/WriteInFile.dir/all
+src/CMakeFiles/main.dir/all: library/CMakeFiles/static.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/abdelrhman/Desktop/project_dir/build/CMakeFiles --progress-num=1,2,3 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/WriteInFile.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/WriteInFile.dir/all
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 0
-.PHONY : CMakeFiles/WriteInFile.dir/rule
+.PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-WriteInFile: CMakeFiles/WriteInFile.dir/rule
-.PHONY : WriteInFile
+main: src/CMakeFiles/main.dir/rule
+.PHONY : main
 
 # clean rule for target.
-CMakeFiles/WriteInFile.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WriteInFile.dir/build.make CMakeFiles/WriteInFile.dir/clean
-.PHONY : CMakeFiles/WriteInFile.dir/clean
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target library/CMakeFiles/static.dir
+
+# All Build rule for target.
+library/CMakeFiles/static.dir/all:
+	$(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/depend
+	$(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/abdelrhman/Desktop/project_dir/build/CMakeFiles --progress-num=4,5 "Built target static"
+.PHONY : library/CMakeFiles/static.dir/all
+
+# Build rule for subdir invocation for target.
+library/CMakeFiles/static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library/CMakeFiles/static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abdelrhman/Desktop/project_dir/build/CMakeFiles 0
+.PHONY : library/CMakeFiles/static.dir/rule
+
+# Convenience name for target.
+static: library/CMakeFiles/static.dir/rule
+.PHONY : static
+
+# clean rule for target.
+library/CMakeFiles/static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f library/CMakeFiles/static.dir/build.make library/CMakeFiles/static.dir/clean
+.PHONY : library/CMakeFiles/static.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

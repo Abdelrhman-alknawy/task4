@@ -1,1 +1,1 @@
-/home/abdelrhman/Desktop/project_dir/build/bin/program
+/home/abdelrhman/Desktop/project_dir/build/bin/main

@@ -1,16 +1,14 @@
-cmake_minimum_required(VERSION 3.12)
-project(CMake LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.22)
 
+# Set the project name and version
+project(sprint_task VERSION 1.0 LANGUAGES CXX)
 
-# Add the include directories
-include_directories(include)
+# Add subdirectories for source code and libraries
+add_subdirectory(src)
+add_subdirectory(library)
 
-# Add the executable
-add_executable(program src/main.cpp src/print.cpp)
+# Link the 'main' target to the 'static' library
+target_link_libraries(main PRIVATE static)
 
-# Add the static library target
-add_library(WriteInFile STATIC library/WriteInFile.cpp include/WriteInfile.hpp)
-
-# Link the executable with the static library
-target_link_libraries(program PRIVATE WriteInFile)
-install(TARGETS program)
+# Install the 'main' target
+install(TARGETS main)
